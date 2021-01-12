@@ -1,0 +1,36 @@
+# Configuration documentation: https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/configuration-options-for-dependency-updates
+---
+version: 2
+updates:
+  # Maintain dependencies for git submodules
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      # Allow direct updates for all packages
+      - dependency-type: "direct"
+    reviewers:
+      - "vyas-n"
+
+  # Maintain dependencies for git submodules
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      # Allow direct updates for all packages
+      - dependency-type: "direct"
+    reviewers:
+      - "vyas-n"
+
+  # Maintain dependencies for Docker
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      # Allow direct updates for all packages
+      - dependency-type: "direct"
+    reviewers:
+      - "vyas-n"
