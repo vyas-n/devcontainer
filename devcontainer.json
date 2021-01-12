@@ -1,19 +1,25 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.154.0/containers/ubuntu
 {
-  "name": "Ubuntu",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "args": {}
-  },
+  "name": "Devcontainer",
+  "image": "ghcr.io/vyas-n/devcontainer:0.1.0",
 
   // Set *default* container specific settings.json values on container create.
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "dotfiles.repository": "vyas-n/dotfiles",
+    "dotfiles.targetPath": "~"
+    // "dotfiles.installCommand": "~/setup.sh"
   },
 
   // Add the IDs of extensions you want installed when the container is created.
-  "extensions": []
+  "extensions": [
+    "ms-azuretools.vscode-docker",
+    "mgmcdermott.vscode-language-babel",
+    "github.vscode-codeql",
+    "elmtooling.elm-ls-vscode",
+    "bmalehorn.vscode-fish"
+  ]
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
