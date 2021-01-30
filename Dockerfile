@@ -16,7 +16,6 @@ RUN yum groupinstall -y 'Development Tools' && yum install -y curl file git ruby
 # Nix Dependencies:
 RUN mkdir -m 0755 /nix && chown dev /nix && dnf install -y sudo
 
-
 # Install Docker
 
 # Install Podman
