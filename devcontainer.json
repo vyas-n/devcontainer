@@ -2,15 +2,8 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.154.0/containers/ubuntu
 {
   "name": "Devcontainer",
-  "image": "ghcr.io/vyas-n/devcontainer:0.1.0",
-
-  // Set *default* container specific settings.json values on container create.
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
-    "dotfiles.repository": "vyas-n/dotfiles",
-    "dotfiles.targetPath": "~"
-    // "dotfiles.installCommand": "~/setup.sh"
-  },
+  // "image": "ghcr.io/vyas-n/devcontainer:0.1.0",
+  "build": { "dockerfile": "Dockerfile" },
 
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
@@ -18,7 +11,29 @@
     "mgmcdermott.vscode-language-babel",
     "github.vscode-codeql",
     "elmtooling.elm-ls-vscode",
-    "bmalehorn.vscode-fish"
+    "bmalehorn.vscode-fish",
+    "eamodio.gitlens",
+    "exiasr.hadolint",
+    "hashicorp.terraform",
+    "oderwat.indent-rainbow",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-mermaid",
+    "davidanson.vscode-markdownlint",
+    "prettier.prettier-vscode",
+    "svipas.prettier-plus",
+    "bodil.prettier-toml",
+    "ms-python.vscode-pylance",
+    "ms-python.python",
+    "rust-lang.rust",
+    "foxundermoon.shell-format",
+    "timonwong.shellcheck",
+    "be5invis.toml",
+    "xshrim.txt-syntax",
+    "redhat.vscode-xml",
+    "redhat.vscode-yaml",
+    "visualstudioexptteam.vscodeintellicode",
+    "github.vscode-pull-request-github"
   ]
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
