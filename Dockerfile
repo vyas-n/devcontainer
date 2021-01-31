@@ -37,7 +37,7 @@ SHELL ["/bin/bash", "-c", "-l"]
 # Install ASDF: https://asdf-vm.com/#/core-manage-asdf
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 
-# Install Nix
+# Install Nix: https://nixos.org/manual/nix/stable/#sect-single-user-installation
 RUN /bin/bash -c "$(curl -fsSL https://nixos.org/nix/install) --no-daemon"
 RUN nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
 RUN nix-channel --update
@@ -49,7 +49,7 @@ USER dev
 # Install Homebrew: https://brew.sh/
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Install direnv
+# Install useful tools
 RUN nix-env -iA nixpkgs.direnv
 
 # Add User files
