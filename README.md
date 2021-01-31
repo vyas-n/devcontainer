@@ -7,5 +7,5 @@ This is a development container used to create a unified environment for both lo
 Add it to your existing repository by:
 
 ```bash
-git submodule add -- https://github.com/vyas-n/devcontainer.git .devcontainer
+git submodule add -b develop -- https://github.com/vyas-n/devcontainer.git .devcontainer
 ```

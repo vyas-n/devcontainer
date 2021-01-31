@@ -4,6 +4,20 @@
   "name": "Devcontainer",
   "image": "ghcr.io/vyas-n/devcontainer:develop",
 
+  // TODO: To use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+  "runArgs": ["--init", "--privileged"],
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+
+  // Install Project Dependencies & refresh package manager indices
+  "postStartCommand": "asdf install && poetry install || true",
+  "postAttachCommand": "brew update && asdf update && asdf plugin update --all && asdf reshim || true",
+
+  // To connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+  "updateRemoteUserUID": true,
+  "remoteUser": "dev",
+
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "ms-azuretools.vscode-docker",
@@ -32,6 +46,30 @@
     "redhat.vscode-xml",
     "redhat.vscode-yaml",
     "visualstudioexptteam.vscodeintellicode",
-    "github.vscode-pull-request-github"
+    "github.vscode-pull-request-github",
+    "janjoerke.jenkins-pipeline-linter-connector",
+    "nicolasvuillamy.vscode-groovy-lint",
+    "hashicorp.terraform",
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-footnotes",
+    "bierner.markdown-mermaid",
+    "prettier.prettier-vscode",
+    "foxundermoon.shell-format",
+    "redhat.vscode-yaml",
+    "eamodio.gitlens",
+    "oderwat.indent-rainbow",
+    "coenraads.bracket-pair-colorizer-2",
+    "vscoss.vscode-ansible",
+    "timonwong.shellcheck",
+    "davidanson.vscode-markdownlint",
+    "be5invis.toml",
+    "bodil.prettier-toml",
+    "exiasr.hadolint",
+    "ms-azuretools.vscode-docker",
+    "samuelcolvin.jinjahtml",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "wholroyd.hcl",
+    "golang.go"
   ]
 }

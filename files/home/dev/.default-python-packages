@@ -1,0 +1,5 @@
+ansible
+docker-compose
+pipenv
+poetry
+pretty_errors
