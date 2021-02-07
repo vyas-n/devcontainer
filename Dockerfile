@@ -30,6 +30,7 @@ RUN mkdir -m 0755 /nix && chown dev /nix && dnf install -y sudo && dnf clean all
 
 # Add System files
 COPY --chown=root:root files/etc/ /etc/
+COPY --chown=root:root files/usr/ /usr/
 
 USER dev
 SHELL ["/bin/bash", "-c", "-l"]
@@ -44,7 +45,7 @@ RUN nix-channel --update
 
 # USER root
 # RUN dnf remove -y sudo
-USER dev
+# USER dev
 
 # Install Homebrew: https://brew.sh/
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
