@@ -11,7 +11,7 @@
   ],
 
   // Install Project Dependencies & refresh package manager indices
-  "postStartCommand": "(asdf install || true) && (poetry install || true) && (pipenv install || true) && (bundle install || true)",
+  "postStartCommand": "(asdf-init.sh || true) && (asdf install || true) && (poetry install || true) && (pipenv install || true) && (bundle install || true)",
   "postAttachCommand": "(brew update || true) && (asdf update || true) && (asdf plugin update --all || true) && (asdf reshim || true)",
 
   // To connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.

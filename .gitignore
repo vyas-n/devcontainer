@@ -1,2 +1,6 @@
 # Environment Variables
 .env
+
+# Recursive submodule
+.gitmodules
+.devcontainer
