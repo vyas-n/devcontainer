@@ -1,14 +1,27 @@
 ---
-# Configuration documentation: https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/configuration-options-for-dependency-updates
+# Configuration documentation: https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
 version: 2
 updates:
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-type: "all"
+    reviewers:
+      - "vyas-n"
+    assignees:
+      - "vyas-n"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
     allow:
-      - dependency-type: "direct"
+      - dependency-type: "all"
     reviewers:
+      - "vyas-n"
+    assignees:
       - "vyas-n"
 
   - package-ecosystem: "docker"
@@ -16,6 +29,8 @@ updates:
     schedule:
       interval: "daily"
     allow:
-      - dependency-type: "direct"
+      - dependency-type: "all"
     reviewers:
+      - "vyas-n"
+    assignees:
       - "vyas-n"

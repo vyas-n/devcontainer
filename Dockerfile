@@ -2,10 +2,11 @@
 FROM docker.io/library/fedora:33
 
 # Update Fedora & add `dev` user
-RUN dnf update -y && dnf clean all -y && useradd dev
+RUN dnf update -y && dnf clean all -y
+RUN useradd dev
 
 # Useful tools
-RUN dnf install -y jq openssl which wget htop && dnf clean all
+RUN dnf install -y jq openssl which wget htop tree && dnf clean all
 
 # Install Snapd: https://snapcraft.io/docs/installing-snap-on-centos
 RUN dnf install -y snapd && dnf clean all && ln -s /var/lib/snapd/snap /snap
@@ -18,6 +19,7 @@ RUN dnf install -y make gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite s
 
 # Homebrew Dependencies: https://docs.brew.sh/Homebrew-on-Linux#fedora-centos-or-red-hat
 RUN dnf group install -y 'Development Tools' && dnf install -y curl file git ruby && dnf clean all && mkdir -p /home/linuxbrew && chown -R dev /home/linuxbrew
+RUN gem update && gem cleanup
 
 # Install Podman: https://podman.io/getting-started/installation#linux-distributions
 RUN dnf install -y podman && dnf clean all
