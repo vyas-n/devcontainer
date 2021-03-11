@@ -1,0 +1,6 @@
+# PNPM Packages & Lock File
+.pnpm-store/
+pnpm-lock.yaml
+
+# Submodules
+.devcontainer/

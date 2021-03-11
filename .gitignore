@@ -4,3 +4,9 @@
 # Recursive submodule
 .gitmodules
 .devcontainer
+
+# MacOS Files
+.DS_Store
+
+# NPM Packages
+node_modules/

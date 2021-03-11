@@ -1,4 +1,3 @@
-# Using centos because fedora is not supported by synk
 FROM docker.io/library/fedora:33
 
 # Update Fedora & add `dev` user
